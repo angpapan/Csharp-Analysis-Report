@@ -1,0 +1,23 @@
+\begin{listing}[htbp]
+\begin{minted}[]{csharp}
+internal abstract class Account
+{
+    public Permission Permissions { get; }
+    public string UserName { get; }
+
+    protected Account(Permission permissions, string userName)
+    {
+        Permissions = permissions;
+        UserName = userName;
+    }
+
+    public void ListPermissions()
+    {
+        Console.WriteLine($"{UserName} has permission to: " +
+            $"${Permissions}");
+    }
+}
+\end{minted}
+\caption{Κλάση για τη δημιουργία λογαριασμού χρήστη}
+\label{flagsMainClass}
+\end{listing}

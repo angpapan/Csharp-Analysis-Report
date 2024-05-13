@@ -1,0 +1,42 @@
+\begin{listing}[htbp]
+\begin{minted}[]{csharp}
+internal enum Family
+{
+    Canidae,
+    Felidae
+}
+
+internal abstract class Animal
+{
+    private int _age = 0;
+    public int Age => _age;
+    public int Lifespan {get; }
+    public Family Family { get; }
+    protected Animal(Family family, int lifespan) 
+        { Family = family; Lifespan = lifespan; }
+    public void IncreaseAge() => _age++;
+    public abstract void MakeSound();
+    public bool IsAlive() => Age <= Lifespan;
+}
+
+internal class Cat : Animal
+{
+    public string Name { get; }
+    public Cat(string name) : base(Family.Felidae, 18)
+        { Name = name; }
+    public override void MakeSound() => 
+        Console.WriteLine("Meow meow!");
+}
+
+internal class Dog : Animal
+{
+    public string Name { get; }
+    public Dog(string name) : base(Family.Canidae, 13)
+        { Name = name; }
+    public override void MakeSound() => 
+        Console.WriteLine("Woof woof!");
+}
+\end{minted}
+\caption{Κλάσεις με κληρονομικότητα}
+\label{inheritanceClasses}
+\end{listing}

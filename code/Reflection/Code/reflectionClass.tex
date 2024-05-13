@@ -1,0 +1,16 @@
+\begin{listing}[htbp]
+\begin{minted}[]{csharp}
+internal class NoChanging
+{
+    private string _shouldNotChange;
+    public string ShouldNotChange => _shouldNotChange;
+
+    public NoChanging(string shouldNotChange)
+    {
+        _shouldNotChange = shouldNotChange;
+    }
+}
+\end{minted}
+\caption{Κλάσης με private πεδίο και μέθοδο}
+\label{reflectionClass}
+\end{listing}

@@ -1,0 +1,18 @@
+\begin{listing}[htbp]
+\begin{minted}[]{csharp}
+internal class Admin : Account
+{
+    public Admin(string username) : 
+        base(Permission.Read | Permission.Write 
+            | Permission.Execute, username) { }
+}
+
+internal class Reader : Account
+{
+    public Reader(string username) : 
+        base(Permission.Read, username) { }
+}
+\end{minted}
+\caption{Admin και Reader accounts}
+\label{flagSubclasses}
+\end{listing}

@@ -1,0 +1,27 @@
+\begin{listing}[htbp]
+\begin{minted}[]{csharp}
+// Dog.cs
+internal partial class Dog
+{
+    public string Name { get; }
+    public Dog(string name) { Name = name; }
+}
+
+// DogDev1.cs
+internal partial class Dog
+{
+    private int _distance;
+    public int Distance => _distance;
+    public void Walk() => _distance++;
+}
+
+// DogDev2.cs
+internal partial class Dog
+{
+    public void Bark() => 
+        Console.WriteLine($"{Name} says: Woof woof!");
+}
+\end{minted}
+\caption{Partial κλάση σε διαφορετικά αρχεία}
+\label{PartialDogClasses}
+\end{listing}

@@ -1,0 +1,15 @@
+\begin{listing}[htbp]
+\begin{minted}[]{csharp}
+NoChanging a = new NoChanging("First!");
+
+var properties = a.GetType().GetProperties();
+
+Console.WriteLine("Listing class properties...");
+foreach (var property in properties)
+{
+    Console.WriteLine(property.Name, property.PropertyType);
+}
+\end{minted}
+\caption{Απαρίθμηση μεθόδων}
+\label{reflectionProperties}
+\end{listing}

@@ -1,0 +1,13 @@
+\begin{listing}[htbp]
+\begin{minted}[]{csharp}
+internal static class StringExtensions
+{
+    public static int CountOccuranciesOfChar(this string data, char character)
+    {
+        return data.Count(d => d == character);
+    }
+}
+\end{minted}
+\caption{Extension μέθοδος για ένα string}
+\label{stringExtensions}
+\end{listing}

@@ -1,0 +1,26 @@
+\titleformat{\chapter}{}{}{0em}{\bf\LARGE}
+
+Η χρήση του reflection επιτρέπει την επισκόπηση και την τροποποίηση κλάσεων, πεδίων, μεθόδων και κατασκευαστών κατά τον χρόνο εκτέλεσης του προγράμματος.
+
+Μετά την επιτυχή μεταγλώττιση του κώδικα κατασκευάζεται αυτόματα από τον μεταγλωττιστή ένα μπλοκ που ονομάζεται Assembly και περιέχει την ενδιάμεση γλώσσα και μεταδεδομένα.
+
+Τα μεταδεδομένα αποτελούνται από πληροφορίες σχετικά με τις κλάσεις, τις μεθόδους, τους κατασκευαστές κτλ. Με το reflection γίνεται έλεγχος αυτών των μεταδεδομένων για την ανάκτηση πληροφοριών ενός assembly.
+
+\includegraphics[width=\fullwidthimage]{code/Reflection/csharp-reflection-hierarchy.png}
+
+Η βασική μέθοδος πρόσβασης στα μεταδεδομένα γίνεται με τη χρήση της κλάσης \codebox{Type}, η οποία παρέχει μεθόδους και ιδιότητες που δίνουν πληροφορίες για κάποιον τύπο.
+
+Για παράδειγμα, για τις κλάσεις (\ref{inheritanceClasses}) του παραδείγματος της κληρονομικότητας (\ref{inheritance}), με reflection μπορεί να γίνει εξακρίβωση του τύπου της κάθε μεταβλητής όπως στον κώδικα \ref{reflectionInheritance}.
+
+\input{code/Reflection/Code/reflectionInheritance}
+
+\input{code/Reflection/Code/reflectionClass}
+
+Σε άλλο παράδειγμα, για την κλάση του κώδικα \ref{reflectionClass}, μπορεί να γίνει απαρίθμηση των μεθόδων μίας κλάσης, όπως στο παράδειγμα του κώδικα \ref{reflectionProperties}.
+
+\input{code/Reflection/Code/reflectionPropertites}
+
+Με reflection μπορούν τα τροποποιηθούν ακόμα και private πεδία μίας κλάσης όπως στο παράδειγμα \ref{reflectionChangePrivate}.
+
+\input{code/Reflection/Code/reflectionChangePrivate}
+

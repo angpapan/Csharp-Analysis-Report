@@ -1,0 +1,14 @@
+\begin{listing}[htbp]
+\begin{minted}[]{csharp}
+[Flags]
+internal enum Permission
+{
+    None = 0,
+    Execute = 1,
+    Write = 1 << 1,
+    Read = 1 << 2
+}
+\end{minted}
+\caption{Flags Enum}
+\label{flagsEnum}
+\end{listing}

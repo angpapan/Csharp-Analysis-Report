@@ -1,0 +1,50 @@
+Τα delegates στη C\# είναι παρόμοια με τους δείκτες σε συναρτήσεις σε γλώσσες όπως η C και η C++.  Η δήλωσή τους αποτελεί μία "υπογραφή" για τις συναρτήσεις στις οποίες μπορεί να διατηρεί κάποια αναφορά. Η σύνταξη για τη δήλωση ενός delegate είναι η παρακάτω:
+
+\codebox{delegate <return type> <delegate-name> <parameter list>}
+
+Η δημιουργία ενός στιγμιότυπου από delegate γίνεται με τον ίδιο τρόπου που δημιουργούνται στιγμιότυπα κλάσεων, με τη χρήση του \codebox{new}.
+
+Στο παράδειγμα του κώδικα \ref{multicast} και \ref{multicastExec} παρουσιάζεται ένα delegate \codebox{Calculation} το οποίο αποτελεί το πρότυπο συναρτήσεων οι οποίες δέχονται ως όρισμα έναν ακέραιο και δεν επιστρέφουν τίποτα. Η κλάση \codebox{Multicast}, η οποία διατηρεί έναν αριθμό στον οποίο εκτελεί πράξεις μέσω συναρτήσεων, δίνει στον χρήστη της τη δυνατότητα να χρησιμοποιήσει το delegate \codebox{Calculation}, μέσω του πεδίου \codebox{calc}. Εδώ, να σημειωθεί ότι υπάρχει η δυνατότητα συνδυασμού συναρτήσεων σε ένα delegate, οι οποίες εκτελούνται σειριακά. Έτσι, στο παράδειγμα χρήσης της κλάσης αρχικά δημιουργούνται στιγμιότυπα των μεθόδων \codebox{Add} και \codebox{Multiply} ως \codebox{Calculation}, τα οποία στη συνέχεια προστίθενται στο πεδίο \codebox{calc}, το οποίο και εν τέλει εκτελείται.
+
+\input{code/Delegates/code/multicast/delegMulticast}
+\input{code/Delegates/code/multicast/multicastExec}
+
+Η βασική, όμως, χρήση των delegates είναι η δυνατότητα να δίνονται συναρτήσεις ως όρισμα, προκειμένου να εκτελούνται ως call-backs ή events. Με τη χρήση τους, μία συνάρτηση μπορεί να δέχεται ως όρισμα μία άλλη συνάρτηση την οποία να εκτελεί, ενισχύοντας την ευελιξία και την επαναχρησιμοποίηση του κώδικα. Σύχνα, συνδυάζεται με τη χρήση εκφράσεων lambda.
+
+Για παράδειγμα, στον κώδικα \ref{delegTeam} η μέθοδος \codebox{PrintPlayers} της κλάσης \codebox{Team}, δέχεται ως όρισμα ένα delegate (με τη μορφή \codebox{Predicate}, οποίο θα συζητηθεί στη συνέχεια), το οποίο αξιοποιείται προκειμένου να τυπώσει μόνο τους παίχτες της που ικανοποιούν κάποιο κριτήριο το οποίο δίνεται κατά την κλήση της μεθόδου.
+
+Η κλάση \ref{delegPlayer} αναπαριστά έναν παίχτη και η κλάση \ref{delegDataFactory} απλώς δημιουργεί δεδομένα από τις κλάσεις \codebox{Team} και \codebox{Player}. Ο κώδικας \ref{funcDelegExec} χρησιμοποιεί τις παραπάνω κλάσεις, τυώνοντας αντίστοιχα αποτελέσματα. Επιπλέον, ορίζει το delegate \codebox{TeamDelegate} το οποίο δέχεται ως όρισμα μία ομάδα και επιστρέψει ένα λογικό αποτέλεσμά. Όλες οι συναρτήσεις που δέχονται ως όρισμα delegate καλούνται με τη χρήση lambda expressions, αλλά θα μπορούσαν αντίστοιχα να δίνονται ως ορίσματα συναρτήσεις που ικανοποιούν το αντίστοιχο delegate.
+
+\input{code/Delegates/code/functional/team}
+\input{code/Delegates/code/functional/player}
+\input{code/Delegates/code/functional/dataFactory}
+\input{code/Delegates/code/functional/funcDelegExec}
+
+Στην πράξη, στην πλειονότητα των περιπτώσεων δεν ορίζονται νέα delegates από τους προγραμματιστές, αλλά χρησιμοποιούνται τα built-in delegates της γλώσσας. Αυτά είναι:
+
+\begin{itemize}
+\item \textbf{Action}: Αναπαριστά ένα delegate το οποίο δέχεται κανένα, ένα ή περισσότερα (έως 16) ορίσματα και δεν επιστρέφει τίποτα. Ορίζεται ως 
+\newline 
+\codebox{public delegate void Action<T>(T arg);} 
+\newline 
+και συντάσσεται ως 
+\newline 
+\codebox{Action<T1, T2, ...>}.
+
+\item \textbf{Func}: Αναπαριστά ένα delegate το οποίο δέχεται κανένα, ένα ή περισσότερα (έως 16) ορίσματα και επιστρέφει κάποια τιμή. Ορίζεται ως 
+\newline 
+\codebox{public delegate Tout Func<Tin1, Tin2, Tout>(Tin1 arg1, Tin2 arg2);} 
+\newline 
+και συντάσσεται ως 
+\newline 
+\codebox{Func<Tin1, Tin2, ..., Tout>}.
+
+\item \textbf{Predicate}: Αναπαριστά ένα delegate το οποίο δέχεται κανένα, ένα ή περισσότερα (έως 16) ορίσματα και επιστρέφει μία λογική τιμή (true/false). Ορίζεται ως 
+\newline 
+\codebox{public delegate bool Prdecate<Tin1, Tin2>(Tin1 arg1, Tin2 arg2);} 
+\newline 
+και συντάσσεται ως 
+\newline 
+\codebox{Predicate<Tin1, Tin2, ...>}.
+
+\end{itemize}

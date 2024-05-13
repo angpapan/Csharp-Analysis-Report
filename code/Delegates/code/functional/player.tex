@@ -1,0 +1,21 @@
+\begin{listing}[htbp]
+\begin{minted}[]{csharp}
+internal class Player
+{
+    public string Name { get; init; }
+    public int HeightInCm { get; init; }
+    public Team Team { get; set; }
+    public Player(string name, int heightInCm, Team team)
+    {
+        Name = name;
+        HeightInCm = heightInCm;
+        Team = team;
+    }
+
+    public override string ToString() =>
+        $"Name: {Name}, Height: {HeightInCm}";
+}
+\end{minted}
+\caption{Κλάση αναπαράστασης ενός παίχτη}
+\label{delegPlayer}
+\end{listing}

@@ -1,0 +1,13 @@
+\begin{listing}[htbp]
+\begin{minted}[]{csharp}
+Animal dog = new Dog("Max");
+Animal cat = new Cat("Dora");
+
+dog.MakeSound();
+cat.MakeSound();
+Console.log($"{((Dog)dog).Name} " +
+  $"{(dog.IsAlive() ? "is" : "is not")} alive.");
+\end{minted}
+\caption{Εκτέλεση κλάσεων με κληρονομικότητα}
+\label{inheritanceExec}
+\end{listing}
