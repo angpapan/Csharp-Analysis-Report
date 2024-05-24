@@ -1,0 +1,102 @@
+Τελεστές C\#
+Οι τελεστές είναι σύμβολα που χρησιμοποιούνται για την εκτέλεση πράξεων σε τελεστέους. Οι τελεστέοι μπορεί να είναι μεταβλητές και/ή σταθερές.
+
+Για παράδειγμα, στο $2+3$, το + είναι ένας τελεστής που χρησιμοποιείται για την εκτέλεση της πράξη της πρόσθεσης ενώ οι αριθμοί 2,3 είναι οι τελεστέοι.
+
+Οι τελεστές χρησιμοποιούνται για τη διαχείριση μεταβλητών και τιμών σε ένα πρόγραμμα. Η C\# υποστηρίζει έναν αριθμό τελεστών που ταξινομούνται βάσει του τύπου των πράξεων που εκτελούν.
+\newpage 
+\textbf{1. Βασικός Τελεστής Ανάθεσης (Basic Assignment Operator)}
+
+\input{code/Operators/code/BasicOperator.tex}
+ Υπάρχουν πολλών ειδών τελεστές όπως θα δούμε παρακάτω με διαφορετικές λειτουργιές. Οι τελεστές είναι βασικοί πυλώνες δόμησης ενός προγράμματος και για αυτό τον λόγο είναι πολύ σημαντικό
+ να κατανοηθεί η λειτουργία τους. Παρουσιάζονται οι τελεστές με ιεραρχία σημαντικότητας.
+\newpage
+\textbf{2. Αριθμητικοί Τελεστές (Arithmetic Operators)}
+
+\begin{table}[h!]
+    \begin{tabular}{|c|l|p{8cm}|}
+    \hline
+    \textbf{Operator} & \textbf{Name} & \textbf{Description} \\ \hline
+    + & Addition & Adds two operands. \\ \hline
+    - & Subtraction & Subtracts the second operand from the first. \\ \hline
+    * & Multiplication & Multiplies two operands. \\ \hline
+    / & Division & Divides the first operand by the second. \\ \hline
+    \% & Modulus & Returns the remainder of a division operation. \\ \hline
+    \end{tabular}
+    \caption{Arithmetic Operators}
+    \label{table:operators}
+\end{table}
+
+
+\textbf{3. Τελεστές Ανάθεσης (Assignment Operators)}
+
+\begin{table}[h!]
+    \begin{tabular}{|c|l|p{5cm}|}
+    \hline
+     \textbf{Operator} & \textbf{Name} & \textbf{Description} \\ \hline
+     += & Addition Assignment & Adds the right operand to the left operand and assigns the result to the left operand. \\ \hline
+     -= & Subtraction Assignment & Subtracts the right operand from the left operand and assigns the result to the left operand. \\ \hline
+     *= & Multiplication Assignment & Multiplies the left operand by the right operand and assigns the result to the left operand. \\ \hline
+     /= & Division Assignment & Divides the left operand by the right operand and assigns the result to the left operand. \\ \hline
+     \%= & Modulus Assignment & Takes the modulus using two operands and assigns the result to the left operand. \\ \hline
+    \end{tabular}
+    \label{table:operators}
+\end{table}
+
+\textbf{4. Τελεστές Αύξησης/Μείωσης (Increment/Decrement Operators)}
+
+\begin{table}[h!]
+    \begin{tabular}{|c|l|p{8cm}|}
+    \hline
+     \textbf{Operator} & \textbf{Name} & \textbf{Description} \\ \hline
+     ++ & Increment & Increases an integer value by one. \\ \hline
+     -- & Decrement & Decreases an integer value by one. \\ \hline
+    \end{tabular}
+    \label{table:operators}
+\end{table}
+
+\newpage
+
+\textbf{5. Τελεστές Άρνησης (Unary Operators)}
+
+\begin{table}[h!]
+    \begin{tabular}{|c|l|p{8cm}|}
+    \hline
+     \textbf{Operator} & \textbf{Name} & \textbf{Description} \\ \hline
+     + & Unary Plus & Indicates a positive value. \\ \hline
+     - & Unary Minus & Indicates a negative value. \\ \hline
+    \end{tabular}
+    \label{table:operators}
+\end{table}
+
+\textbf{6. Λογικοί Τελεστές (Logical Operators)}
+
+\begin{table}[h!]
+    \begin{tabular}{|c|l|p{8cm}|}
+    \hline
+    \textbf{Operator} & \textbf{Name} & \textbf{Description} \\ \hline
+    \&\& & Logical AND & Returns true if both expressions are true. \\ \hline
+    || & Logical OR & Returns true if one of the expressions is true. \\ \hline
+    ! & Logical NOT & Reverses the logical state of its operand. \\ \hline
+    \end{tabular}
+    \label{table:operators}
+\end{table}
+
+
+\textbf{7. Τελεστές Bitwise (Bitwise Operators)}
+
+\begin{table}[h!]
+    \begin{tabular}{|c|l|p{5cm}|}
+    \hline
+    \textbf{Operator} & \textbf{Name} & \textbf{Description} \\ \hline
+    \& & Bitwise AND & Performs a bitwise AND operation. \\ \hline
+    | & Bitwise OR & Performs a bitwise OR operation. \\ \hline
+    \textasciicircum & Bitwise XOR & Performs a bitwise XOR operation. \\ \hline
+    \thicksim  & Bitwise Complement & Inverts all the bits of the operand. \\ \hline
+    << & Left Shift & Shifts bits to the left. \\ \hline
+    >> & Right Shift & Shifts bits to the right. \\ \hline
+    \end{tabular}
+    \label{table:operators}
+\end{table}
+
+Παραδείγματα χρήσης των παραπάνω τελεστών υπάρχουν στο \href{https://www.programiz.com/csharp-programming/operators}{Programiz}

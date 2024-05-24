@@ -4,7 +4,8 @@
 
 Για τη δημιουργία extension methods είναι απαραίτητη η κατασκευή μίας \codebox{static} κλάσης. Σε αυτή την κλάση μπορούν να προστεθούν static μέθοδοι, οι οποίες ονομάζονται extension methods αν πριν το πρώτο όρισμά τους τοποθετηθεί η λέξη κλειδί \codebox{this}. Έτσι, η μέθοδος γίνεται extension method της κλάσης του πρώτου της ορίσματος και μπορεί να καλείται και κάθε στιγμιότυπο αυτής της κλάσης.
 
-Για παράδειγμα, στον κώδικα \ref{stringExtensions} η μέθοδος \codebox{CountOccuranciesOfChar} αποτελεί extension method της κλάσης \codebox{string}. Δέχεται ως πρώτο όρισμα το \codebox{this string data} που υποδηλώνει ότι είναι extension της κλάσης \codebox{string} και ως δεύτερο το \codebox{char character}, το οποίο χρησιμοποεί κατά την εκτέλεση της μεθόδου για να μετρήσει πόσες φορές εμφανίζεται στο \codebox{data} ο χαρακτήρας που ορίζεται. 
+Για παράδειγμα, στον κώδικα \ref{stringExtensions} η μέθοδος \codebox{CountOccuranciesOfChar} αποτελεί extension method της κλάσης \codebox{string}. Δέχεται ως πρώτο όρισμα \\
+ το \codebox{this string data} που υποδηλώνει ότι είναι extension της κλάσης \codebox{string} και ως δεύτερο το \codebox{char character}, το οποίο χρησιμοποεί κατά την εκτέλεση της μεθόδου για να μετρήσει πόσες φορές εμφανίζεται στο \codebox{data} ο χαρακτήρας που ορίζεται. 
 
 \input{code/Extensions/Code/stringExtensions}
 
