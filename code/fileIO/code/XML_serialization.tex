@@ -1,11 +1,10 @@
-\begin{listing}[htbp]
+\begin{listing}[H]
 \begin{minted}[]{csharp}
 using System;
 using System.IO;
 using System.Xml.Serialization;
 
 public class Person
-on
 {
     public string Name { get; set; }
     public int Age { get; set; }
@@ -19,14 +18,16 @@ Person p = new Person { Name = "John Doe", Age = 30};
 XmlSerializer serializer = new SmlSerializer(typeof(Person));
 
 // Serialize object to XML
-using (FileStream fs = new FileStream("person.xml", FileMode.Create))
+using (FileStream fs = new FileStream("person.xml", 
+                                        FileMode.Create))
 {
     serializer.Serialize(fs, p);
     Console.WriteLine("Object serialized to XML!");
 }
 
 // Deserialize object from XML
-using (FileStream fs = new FileStream("person.xml", FileMode.Open))
+using (FileStream fs = new FileStream("person.xml",
+                                         FileMode.Open))
 {
     Person p2 = (Person)serializer.Deserialize(fs);
     Console.WriteLine("Object deserialized from XML:");
