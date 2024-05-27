@@ -12,4 +12,5 @@
 **/*.pdf
 **/*.pyg
 **/*.synctex*
-\.vscode
+/.vscode
+/_minted-main
